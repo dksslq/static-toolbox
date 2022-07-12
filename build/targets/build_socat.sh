@@ -15,7 +15,7 @@ source $GITHUB_WORKSPACE/build/lib.sh
 init_lib "$1"
 
 build_socat() {
-    fetch "http://repo.or.cz/socat.git" "${BUILD_DIRECTORY}/socat" git
+    fetch "https://repo.or.cz/socat.git" "${BUILD_DIRECTORY}/socat" git
     cd "${BUILD_DIRECTORY}/socat"
     git clean -fdx
     autoconf
