@@ -19,9 +19,10 @@ build_socat() {
     cd "${BUILD_DIRECTORY}/socat"
     git clean -fdx
     autoconf
+    sc_cv_getprotobynumber_r=2 \
     CFLAGS="${GCC_OPTS}" \
         CXXFLAGS="${GXX_OPTS}" \
-        CPPFLAGS="-I${BUILD_DIRECTORY} -I${BUILD_DIRECTORY}/openssl/include -DNETDB_INTERNAL=-1" \
+        CPPFLAGS="-I${BUILD_DIRECTORY} -I${BUILD_DIRECTORY}/openssl/include" \
         LDFLAGS="-L${BUILD_DIRECTORY}/readline -L${BUILD_DIRECTORY}/ncurses/lib -L${BUILD_DIRECTORY}/openssl" \
         ./configure \
             --host="$(get_host_triple)"
