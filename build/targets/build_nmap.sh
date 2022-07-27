@@ -29,7 +29,6 @@ build_nmap() {
             --without-ndiff \
             --without-zenmap \
             --without-nmap-update \
-            --without-libssh2 \
             --with-pcap=linux \
             --with-openssl="${BUILD_DIRECTORY}/openssl"
     sed -i -e "s/shared\: /shared\: #/" "${BUILD_DIRECTORY}/nmap/libpcap/Makefile"
