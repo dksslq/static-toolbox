@@ -19,6 +19,7 @@ build_tcpdump() {
     cd "${BUILD_DIRECTORY}/tcpdump"
     git clean -fdx
     # git checkout tcpdump-4.9.3
+    autoreconf -fi
     export LIBPCAP_PATH="${BUILD_DIRECTORY}/libpcap"
     CFLAGS="${GCC_OPTS} -I${LIBPCAP_PATH} -L${LIBPCAP_PATH}" \
         CXXFLAGS="${GXX_OPTS}" \
